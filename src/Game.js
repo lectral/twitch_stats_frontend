@@ -17,7 +17,7 @@ class Game extends Component {
         <td> <Trend a={data['streams_count']} b={data['streams_10_min_ago']}/> </td>
         <td> {data['streams_10_min_ago']} </td>
         <td> <Trend a={data['streams_10_min_ago']} b={data['streams_60_min_ago']}/> </td>
-        <td> {data['60_min_ago_streamer_count']} </td>
+        <td> {data['streams_60_min_ago']} </td>
         <td> <Distribution distribution={data['distribution']}/></td>
     </tr>
     );
