@@ -1,42 +1,41 @@
 *{
   color: white;
 
+  font-family: 'Exo 2', sans-serif;
 }
 
-.header-and-nav {
-  height: 120px;
-  width: 100%;
-  background-color: #151515; 
-  margin: 0;
-  padding: 0;
+.recharts-tooltip-wrapper{
+  color: black;
 }
+
+.custom-tooltip {
+  width: 200px;
+  height: 80px;
+  color: black;
+  background-color: white;
+}
+a {
+  text-decoration: none;
+
+}
+body {
+  background-color: #141517; 
+}
+
+.navbar {
+  height: 80px;
+  background-color: #202125;
+}
+
 .menu {
-  text-align: center;
-}
-.logo {
-  font-family: 'Unlock', sans-serif;
-  color: white;
-  text-transform: uppercase;
-  font-size: 24px;
-}
-td{
-  text-align: center;
 }
 
-.search {
-  background-color: rgba(0,0,0,0.1);
-  color: white;
+.menu-1 {
+ margin: 40px;
 }
-
-table {
-  /*width: 100%;*/
-  border: 0;
-  border-collapse: separate; 
-  border-spacing: 0 3px; 
-}
-
-tr.spaceUnder>td {
-  padding-bottom: 1em;
+.container {
+  max-width: 100%;
+  width: 100%;
 }
 
 .badge {
@@ -70,39 +69,6 @@ tr.spaceUnder>td {
 .game_background {
   height: 50px;
   background-color: rgba(0,0,0,0.25)
-}
-
-.logo a{
-  font-family: inherit;
-  color: #232123;
-  background-color: white;
-  padding: 3px;
-  margin-right: 5px
-}
-
-.logo span {
-  font-family: inherit;
-  padding: 2px;
-}
-
-table {
-  width: 100%;
-}
-.info {
-
-
-}
-
-a {
-  text-decoration: none;
-
-}
-.wrapper {
-  display: block;
-
-}
-body {
-  background-color: #000000;
 }
 
 .main {

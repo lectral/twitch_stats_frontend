@@ -6,12 +6,10 @@ class Distribution extends Component{
     return "https://twitch.tv/"+name
   }
   parseDistribution = (string,rank) =>{
-    console.log(value)
     let regex = /(.*)\[(.*)\]/g;
     let regex_result = regex.exec(string) 
     let value = regex_result[2]
     let name = regex_result[1]
-    console.log(name)
     return <a href={this.twitchLink(name)} className={rank}> {Math.round(value)} </a>
   }
   render() {

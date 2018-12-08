@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-
+import './Header.css';
 class Header extends Component {
   render() {
     return (
-      <header id="app-header" className="app-header">
-        <div className="col-11 logo">
-        </div>
-        <div className="col-1 info">
-          Info 
-        </div>
-     </header>
+        <header id="app-header" className="app-header">
+            <a href="#">
+              TwitchStats 
+            </a>
+            <span>
+              PL
+            </span>
+        </header>
     );
   }
 }
