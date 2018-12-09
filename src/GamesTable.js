@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Game from './Game'
-import Spinner from './Spinner'
 import './GamesTable.css';
 const URL=process.env.TWITCH_STATS_FRONTEND_BACKEND_URL
 class GamesTable extends Component {

@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import {LineChart, Line, Tooltip, XAxis, YAxis, ResponsiveContainer} from 'recharts'
+import {LineChart, Line, Tooltip, XAxis, ResponsiveContainer} from 'recharts'
 import Moment from 'moment';
 import 'moment/locale/pl'
 import 'moment-timezone';
 
 class Chart extends Component {
   mapData = (data) => {
+    data = {...data}
     Moment.locale('pl');
-    console.log(Moment.locale());
-    data['original_date'] =data['date'];
     data['date'] = Moment.utc(data['date']).tz('Europe/Warsaw').format('LT');
     return data 
 
@@ -16,7 +15,7 @@ class Chart extends Component {
 
   render() {
     let chartData = this.props.data.map((item) => this.mapData(item))
-    const margin={top: 0,bottom: 0, right: 0, left: 5}
+    const margin={top: 5,bottom: 5, right: 10, left: 10}
     return (
       <ResponsiveContainer width="90%" height={100}>
         <LineChart margin={margin}  data={chartData}> 

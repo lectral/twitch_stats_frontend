@@ -1,0 +1,9 @@
+.page-indicator {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+
+.page-indicator-selected {
+  color: #840000;  
+}
