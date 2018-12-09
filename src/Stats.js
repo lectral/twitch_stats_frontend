@@ -29,10 +29,8 @@ class Stats extends Component {
 
   render() {
     let data = this.state.data 
-    if(this.state.data){
-      data = this.state.data
-    }else {
-      data = this.state.data
+    if(data) {
+      data = this.state.data.splice(0,20)
     }
     return (
       <div>

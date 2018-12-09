@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import {LineChart, Line, Tooltip, XAxis, YAxis, ResponsiveContainer} from 'recharts'
 import Moment from 'moment';
+import 'moment/locale/pl'
+import 'moment-timezone';
 
 class Chart extends Component {
   mapData = (data) => {
-    Moment.locale('en');
+    Moment.locale('pl');
+    console.log(Moment.locale());
     data['original_date'] =data['date'];
-    data['date'] = Moment(data['date']).fromNow();
+    data['date'] = Moment.utc(data['date']).tz('Europe/Warsaw').format('LT');
     return data 
 
   }
 
   render() {
-    let chartData = this.props.data.map(this.mapData)
+    let chartData = this.props.data.map((item) => this.mapData(item))
     const margin={top: 0,bottom: 0, right: 0, left: 5}
     return (
       <ResponsiveContainer width="90%" height={100}>
         <LineChart margin={margin}  data={chartData}> 
-          <XAxis dataKey="original_date"/>
+          <XAxis dataKey="date"/>
           <Tooltip content={<CustomTooltip/>}/>
           <Line type="monotone" dataKey="viewer_count" stroke="#840000" activeDot={{r: 8}}/>
           <Line type="monotone" dataKey="streams_count" stroke="#ffffff"/>
@@ -39,7 +42,7 @@ class CustomTooltip extends Component {
     }
     return (
     <div className="custom-tooltip">
-      Date: 
+      Date: {this.props.label} <br/>
       Viewers: {vc} <br/>
       Streamers: {sc}
     </div>

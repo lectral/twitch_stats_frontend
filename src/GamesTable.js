@@ -6,7 +6,7 @@ const URL=process.env.TWITCH_STATS_FRONTEND_BACKEND_URL
 class GamesTable extends Component {
 
   tableItems = (data) =>{
-    return <Game data={data}/>
+    return <Game key={data['game_id']} data={data}/>
   }
   render() {
     return (
