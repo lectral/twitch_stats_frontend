@@ -46,7 +46,7 @@ class GameDetails extends Component{
               <Chart data={this.state.graphs}/>
             </div>
           </div>
-          <div className="streamers">
+          <div className="row streamers">
             <div className="col-12">
               <h3> Streamers in last month </h3>
               {this.state.streamers.map(this.streamersItem)}
