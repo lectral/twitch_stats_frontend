@@ -16,7 +16,7 @@ class Stats extends Component {
     if(this.props.match.params.page){
       current_page = this.props.match.params.page
     }
-    let url = process.env.REACT_APP_FRONTEND_BACKEND_URL+"/games"
+    let url = process.env.REACT_APP_FRONTEND_BACKEND_URL+"/stats"
     fetch(url)
       .then(res => res.json())
       .then(data => {

@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
-
+import './StreamerListItem.css'
 
 class StreamerListItem extends Component {
   render(){
     return (
-      <span> {this.props.name} </span>
+      <span className="streamer-list-item"> {this.props.name} </span>
     )
 
   }

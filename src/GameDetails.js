@@ -4,76 +4,59 @@ import Chart from './Chart'
 import StreamerListItem from './StreamerListItem'
 class GameDetails extends Component{
   state = {
-    data : {
-      'title' : 'Fortnite', 
-      'twitch_id' : this.props.match.params.id,
-      "graphs": [
-        {
-          "date": "2018-12-10 19:51:04 ",
-          "interval": 10,
-          "viewer_count": 12529,
-          "streams_count": 115
-        },
-        {
-          "date": "2018-12-10 19:40:45 ",
-          "interval": 10,
-          "viewer_count": 10955,
-          "streams_count": 106
-        },
-        {
-          "date": "2018-12-10 19:30:26 ",
-          "interval": 10,
-          "viewer_count": 10441,
-          "streams_count": 111
-        },
-        {
-          "date": "2018-12-10 19:20:06 ",
-          "interval": 10,
-          "viewer_count": 10364,
-          "streams_count": 123
-        },
-      ],
-      "streamers" : [
-        {"user_name" : "Zebra" },
-        {"user_name" : "Real299" }
-      ]
-      }
+    title : '',
+    streamers : [],
+    graphs : [],
+  }
+
+  componentDidMount(){
+    let url = process.env.REACT_APP_FRONTEND_BACKEND_URL+"/games/"+this.props.match.params.id
+    console.log(url)
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        this.setState({
+          title : data.title,
+          streamers : data.streamers,
+          graphs : data.graphs
+        })
+      });
 
 
-    }
+  }
 
+  streamersItem = (streamer, index) => {
+    return <StreamerListItem key={index} name={streamer.user_name}/>
+  }
 
-    streamersItem = (streamer) => {
-
-      return <StreamerListItem name={streamer.user_name}/>
-    }
-    render(){
-      return(
-        <div className="game-details2">
+  render(){
+    console.log(this.state.title)
+    return(
+      <div className="game-details2">
         <div className="container-details">
-          <h2> PLACEHOLDER </h2>
           <div className="row">
             <div className="col-12">
-              <span className="title">{this.props.match.params.id}</span>
+              <h2> {this.state.title} </h2>
             </div>
           </div>
           <div className="row">
             <div className="col-12">
 
-              <Chart data={this.state.data.graphs}/>
+              <Chart data={this.state.graphs}/>
             </div>
           </div>
           <div className="streamers">
             <div className="col-12">
               <h3> Streamers in last month </h3>
-              {this.state.data.streamers.map(this.streamersItem)}
+              {this.state.streamers.map(this.streamersItem)}
             </div>
           </div>
         </div>
-        </div>
-      )
-    }
-
+      </div>
+    )
   }
 
-  export default GameDetails;
+}
+
+export default GameDetails;

@@ -35,7 +35,7 @@ class CustomTooltip extends Component {
   render() {
     let vc = 0;
     let sc = 0;
-    if(this.props.payload[0] && this.props.payload[1]){
+    if(this.props.payload && this.props.payload[0] && this.props.payload[1]){
       vc = this.props.payload[0].value 
       sc = this.props.payload[1].value 
     }
