@@ -18,12 +18,12 @@
 }
 a {
   text-decoration: none;
-
 }
 
 body {
   background-color: #141517; 
 }
+
 
 .navbar {
   background-color: #202125;
@@ -35,7 +35,7 @@ body {
 .menu-1 {
 }
 
-.container {
+.container-wide {
   max-width: 100%;
   width: 100%;
 }

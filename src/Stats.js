@@ -3,14 +3,19 @@ import GamesTable from './GamesTable'
 import Spinner from './Spinner'
 import PageIndicator from './PageIndicator'
 
+import './App.css';
 class Stats extends Component {
   state = {
     data : null,
     pages: [],
     current_page: 1 
   }
- 
+
   componentDidMount() {
+    let current_page = 1
+    if(this.props.match.params.page){
+      current_page = this.props.match.params.page
+    }
     let url = process.env.REACT_APP_FRONTEND_BACKEND_URL+"/games"
     fetch(url)
       .then(res => res.json())
@@ -33,7 +38,8 @@ class Stats extends Component {
       .then(data => this.setState(
         {
           data  : data.data,
-          pages : data.pages 
+          pages : data.pages, 
+          current_page: current_page
         }))
   }
 
@@ -45,7 +51,7 @@ class Stats extends Component {
     const is_selected = current_page === page ? true : false
     return <PageIndicator key={page} number={page} selected={is_selected} onClick={this.onClick}/>
   }
-  
+
   onClick = (number) => {
     this.setState({
       current_page: number
@@ -61,13 +67,17 @@ class Stats extends Component {
       data = data.slice(begin,end)
     }
     return (
-      <div>
-      <div className="row">
-        { this.state.pages.map((value) => this.pagesItems(value,this.state.current_page)) }
-      </div>
-      <div>
-        { data ? <GamesTable data={data}/> : <Spinner/>}
-      </div>
+      <div className="row wide-row">
+        <section id="games-table" className="games-table">
+          <div className="col-12">
+            <div className="row">
+              { this.state.pages.map((value) => this.pagesItems(value,this.state.current_page)) }
+            </div>
+            <div>
+              { data ? <GamesTable data={data}/> : <Spinner/>}
+            </div>
+          </div>
+      </section>
     </div>
     )
 

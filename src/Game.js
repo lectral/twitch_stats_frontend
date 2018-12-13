@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Distribution from './Distribution'
 import Chart from './Chart'
+import {Link} from 'react-router-dom'
 class Game extends Component {
   render() {
     const data = this.props.data
@@ -8,7 +9,7 @@ class Game extends Component {
     const chartData = data['graphs'] 
     return (
       <tr className="game_background" style={bg}>
-        <td> {data['title']} </td>
+        <td> <Link to={"/games/"+data['game_id']}>{data['title']} </Link></td>
         <td> {data['viewer_count']} </td>
         <td> {data['streams_count']} </td>
         <td> {chartData ? <Chart data={chartData}/> : "Loading" } </td> 

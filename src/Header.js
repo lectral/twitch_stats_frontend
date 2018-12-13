@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 import './Header.css';
+
+
 class Header extends Component {
   render() {
     return (
-        <header id="app-header" className="app-header">
-            <a href="#">
+      <div className="row header">
+        <div className="col-2 logo">
+          <header id="app-header" className="app-header">
+            <Link to="/">
               TwitchStats 
-            </a>
+            </Link>
             <span>
               PL
             </span>
-        </header>
+          </header>
+        </div>
+      </div>
     );
   }
 }

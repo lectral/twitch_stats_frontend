@@ -1,15 +1,18 @@
 import React, {Component} from 'react'
 import './NavItem.css'
+import {Link} from 'react-router-dom'
+import { withRouter } from "react-router";
 
 class NavItem extends Component {
   render() {
-    let className = "nav-block"
-    if(this.props.selected){
+    let links_matches = [this.props.location.pathname].concat(this.props.alternative)
+    let className = "nav-block";
+    if(links_matches.includes(this.props.link)){
       className = className+" nav-block-selected"
     }
     return (
       <div className={className}>
-        <a href={this.props.link}> {this.props.text} </a> 
+        <Link to={this.props.link}> {this.props.text} </Link>
       </div>
     )
 
@@ -17,4 +20,5 @@ class NavItem extends Component {
 
 }
 
-export default NavItem;
+export default withRouter(NavItem);
+

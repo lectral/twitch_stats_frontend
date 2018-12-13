@@ -3,10 +3,14 @@ import NavItem from './NavItem'
 class Navbar extends Component {
   render() {
     return (
-      <div>
-        <NavItem link="#" text="TERAZ" selected={true}/>
-        <NavItem link="#" text="GRY"/>
-        <NavItem link="#" text="POLECANE"/>
+      <div className="row navbar">
+        <div className="col-12 navbar">
+          <div>
+            <NavItem link="/stats" text="TERAZ" selected={true} alternative={['/stats']}/>
+            <NavItem link="/games" text="GRY"/>
+            <NavItem link="#" text="POLECANE"/>
+          </div>
+        </div>
       </div>
     )
 
