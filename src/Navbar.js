@@ -6,7 +6,7 @@ class Navbar extends Component {
       <div className="row navbar">
         <div className="col-12 navbar">
           <div>
-            <NavItem link="/stats" text="TERAZ" selected={true} alternative={['/stats']}/>
+            <NavItem link="/stats/1" text="TERAZ" selected={true} alternative={['/stats']}/>
             <NavItem link="/games" text="GRY"/>
             <NavItem link="#" text="POLECANE"/>
           </div>
