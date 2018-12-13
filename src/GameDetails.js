@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './GameDetails.css'
 import Chart from './Chart'
-
+import StreamerListItem from './StreamerListItem'
 class GameDetails extends Component{
   state = {
     data : {
@@ -41,11 +41,17 @@ class GameDetails extends Component{
 
 
     }
+
+
+    streamersItem = (streamer) => {
+
+      return <StreamerListItem name={streamer.user_name}/>
+    }
     render(){
       return(
         <div className="game-details2">
-          <h2> PLACEHOLDER </h2>
         <div className="container-details">
+          <h2> PLACEHOLDER </h2>
           <div className="row">
             <div className="col-12">
               <span className="title">{this.props.match.params.id}</span>
@@ -60,7 +66,7 @@ class GameDetails extends Component{
           <div className="streamers">
             <div className="col-12">
               <h3> Streamers in last month </h3>
-              Zebra (320)  Real299(660)
+              {this.state.data.streamers.map(this.streamersItem)}
             </div>
           </div>
         </div>
