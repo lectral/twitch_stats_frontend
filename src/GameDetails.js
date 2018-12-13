@@ -27,7 +27,7 @@ class GameDetails extends Component{
   }
 
   streamersItem = (streamer, index) => {
-    return <StreamerListItem key={index} name={streamer.user_name}/>
+    return <StreamerListItem key={index} index={index+1} stat={streamer.total_viewer_count} name={streamer.user_name}/>
   }
 
   render(){
