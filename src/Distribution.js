@@ -10,7 +10,7 @@ class Distribution extends Component{
     let regex_result = regex.exec(string) 
     let value = regex_result[2]
     let name = regex_result[1]
-    return <a href={this.twitchLink(name)} className={rank}> {Math.round(value)} </a>
+    return <a href={this.twitchLink(name)} className={rank}> {Math.round(value)}% </a>
   }
   render() {
     let string = this.props.distribution.split("|")

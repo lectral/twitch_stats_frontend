@@ -5,9 +5,10 @@ import { withRouter } from "react-router";
 
 class NavItem extends Component {
   render() {
-    let links_matches = [this.props.location.pathname].concat(this.props.alternative)
+    let links_matches = [this.props.location.pathname]
     let className = "nav-block";
-    if(links_matches.includes(this.props.link)){
+    let matches = links_matches.filter(value => value.includes(this.props.link))
+    if(matches.length > 0){
       className = className+" nav-block-selected"
     }
     return (

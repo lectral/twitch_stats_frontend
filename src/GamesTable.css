@@ -11,7 +11,8 @@ table {
 }
 
 tr.spaceUnder>td {
-  padding-bottom: 1em;
+  padding-bottom: 2em;
+  padding-top: 2em;
 }
 
 

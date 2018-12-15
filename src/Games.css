@@ -1,0 +1,19 @@
+.container-games {
+  margin: auto;
+  width: 60%;
+
+}
+
+form {
+  text-align: center;
+  margin: auto;
+}
+
+.search-box {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+
+}

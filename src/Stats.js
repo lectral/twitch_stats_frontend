@@ -14,7 +14,7 @@ class Stats extends Component {
   componentDidMount() {
     let current_page = 1
     if(this.props.match.params.page){
-      current_page = this.props.match.params.page
+       current_page = parseInt(this.props.match.params.page, 10)
     }
     let url = process.env.REACT_APP_FRONTEND_BACKEND_URL+"/stats"
     fetch(url)
@@ -48,6 +48,7 @@ class Stats extends Component {
   }
 
   pagesItems = (page, current_page) => {
+    console.log(page)
     const is_selected = current_page === page ? true : false
     return <PageIndicator key={page} number={page} selected={is_selected} onClick={this.onClick}/>
   }

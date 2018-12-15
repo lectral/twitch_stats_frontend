@@ -8,7 +8,7 @@ class Navbar extends Component {
           <div>
             <NavItem link="/stats/1" text="TERAZ" selected={true} alternative={['/stats']}/>
             <NavItem link="/games" text="GRY"/>
-            <NavItem link="#" text="POLECANE"/>
+            <NavItem link="/coming_soon" text="POLECANE"/>
           </div>
         </div>
       </div>
