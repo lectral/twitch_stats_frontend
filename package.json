@@ -6,6 +6,7 @@
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
     "react": "^16.6.3",
+    "react-calendar-heatmap": "^1.8.0",
     "react-chartjs": "^1.2.0",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",

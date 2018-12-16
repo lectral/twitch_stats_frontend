@@ -2,6 +2,10 @@ import React, {Component} from 'react'
 import './GameDetails.css'
 import Chart from './Chart'
 import StreamerListItem from './StreamerListItem'
+import CalendarHeatmap from 'react-calendar-heatmap';
+import Heatmap from './Heatmap';
+
+import 'react-calendar-heatmap/dist/styles.css'
 class GameDetails extends Component{
   state = {
     title : '',
@@ -55,8 +59,14 @@ class GameDetails extends Component{
           </div>
           <div className="row">
             <div className="col-12">
-              <h3> Streamers/Visitors in last hour </h3>
+              <h3> Streamers vs Viewers in last hour </h3>
               { this.state.graphs ? <Chart data={this.state.graphs}/> : "No data" }
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <h3> Heatmap </h3>
+              <Heatmap> </Heatmap>
             </div>
           </div>
           <div className="row streamers">
