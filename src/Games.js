@@ -39,7 +39,12 @@ class Games extends Component{
     if(this.state.search){
       console.log(this.state.games)
       let search = this.state.search.toLowerCase()
-      filtered = this.state.games.filter(value => value.title.toLowerCase().includes(search))
+      filtered = this.state.games.filter(value => {
+        if(value.title != null){
+          return value.title.toLowerCase().includes(search)
+        }
+        return false
+      })
     }else{
       filtered = this.state.games.slice(); 
     }
