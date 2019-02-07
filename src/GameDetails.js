@@ -13,7 +13,7 @@ class GameDetails extends Component{
     graphs : [],
   }
   column_count = 6 
-  componentDidMount(){
+  componentDidMount(){ 
     let url = process.env.REACT_APP_FRONTEND_BACKEND_URL+"/games/"+this.props.match.params.id
     fetch(url)
       .then(res => res.json())

@@ -3,6 +3,7 @@ import Distribution from './Distribution'
 import Chart from './Chart'
 import {Link} from 'react-router-dom'
 import './Game.css'
+
 class Game extends Component {
   render() {
     const data = this.props.data

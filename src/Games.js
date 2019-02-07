@@ -22,7 +22,6 @@ class Games extends Component{
   }
 
   gameItems = (game) => {
-    console.log("aaa")
     return <div className={"col-"+12/this.column_count}><Link to={"/games/"+game.game_id}> {game.title} </Link></div>
   }
 
