@@ -8,7 +8,7 @@ class Chart extends Component {
   mapData = (data) => {
     data = {...data}
     Moment.locale('pl');
-    data['date'] = Moment.utc(data['date']).tz('Europe/Warsaw').format('LT');
+    data['date'] = Moment.utc(data['date'],"YYYY-MM-DD HH:mm:ss ").tz('Europe/Warsaw').format('LT');
     return data 
 
   }
