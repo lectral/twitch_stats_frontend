@@ -8,7 +8,7 @@ class Game extends Component {
   render() {
     const data = this.props.data
     const bg = {}
-    const chartData = data['graphs'] 
+    const chartData = data['graphs'].reverse()
     return (
       <tr className="game_background" style={bg}>
         <td> <Link to={"/games/"+data['game_id']}>{data['title']} </Link></td>
