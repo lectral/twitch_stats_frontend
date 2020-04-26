@@ -21,7 +21,7 @@ class GameDetails extends Component{
         this.setState({
           title : data.title,
           streamers : data.streamers,
-          graphs : data.graphs
+          graphs : data.stats.graphs
         })
       });
 
